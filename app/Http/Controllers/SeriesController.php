@@ -40,4 +40,15 @@ class SeriesController
 
       return response()->json($serie);
    }
+
+   public function destroy(int $id)
+   {
+      $quantity = Serie::destroy($id);
+
+      if ($quantity === 0) {
+         return response()->json(['Error' => 'Serie not found'], 404);
+      }
+
+      return response()->json('', 204);
+   }
 }
