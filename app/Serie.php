@@ -9,6 +9,7 @@ class Serie extends Model
 {
    public $timestamps = false;
    protected $fillable = ['name'];
+   protected $perPage = 10;
 
    public function episodes()
    {
