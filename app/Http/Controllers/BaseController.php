@@ -10,7 +10,7 @@ abstract class BaseController
 
    public function index(Request $request)
    {
-      return $this->class::paginate($request->per_page);
+      return str_replace('\/', '/', json_encode($this->class::paginate($request->per_page)));
    }
 
    public function store(Request $request)
