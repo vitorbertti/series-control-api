@@ -8,7 +8,7 @@ class Episode extends Model
 {
 
    public $timestamps = false;
-   protected $fillable = ['season', 'number', 'watched'];
+   protected $fillable = ['season', 'number', 'watched', 'serie_id'];
 
    public function serie()
    {
