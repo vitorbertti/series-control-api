@@ -10,4 +10,10 @@ class EpisodesController extends BaseController
    {
       $this->class = Episode::class;
    }
+
+   public function searchSeries(int $serieId)
+   {
+      $episodes = Episode::query()->where('serie_id', $serieId)->get();
+      return $episodes;
+   }
 }
