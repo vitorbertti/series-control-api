@@ -39,7 +39,7 @@ class AuthServiceProvider extends ServiceProvider
             }
             $authorizationHeader = $request->header('Authorization');
             $token = str_replace('Bearer', '', $authorizationHeader);
-            $authData = JWT::decode($token, '', ['HS256']);
+            $authData = JWT::decode($token, env('JWT_KEY'), ['HS256']);
 
             return new GenericUser(['email' => $authData]);
             // return User::where('email', $authData('email'))->first();
